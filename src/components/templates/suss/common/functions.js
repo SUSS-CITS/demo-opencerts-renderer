@@ -164,15 +164,16 @@ export const displayTransRetroLiners = text => {
   const year = text.substring(0, 4);
   if (year < 2017) {
     return (
-      <div className="row d-flex justify-content-center">
-        <span
-          className="certTextStyle"
-          style={{ marginTop: "50px", marginBottom: "50px" }}
-        >
-          The transcript was originally issued by SIM University. On 17 March
-          2017, SIM University was renamed &quot;Singapore University of Social
-          Sciences&quot;.
-        </span>
+       <div className="row">
+        <div className="col">
+			<span
+			  className="transTextStyle"
+			  style={{ marginTop: "50px", marginBottom: "20px" }}>
+			  The transcript was originally issued by SIM University. On 17 March
+			  2017, SIM University was renamed &quot;Singapore University of Social
+			  Sciences&quot;.
+			</span>
+		</div>
       </div>
     );
   } else {

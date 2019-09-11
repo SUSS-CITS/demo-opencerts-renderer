@@ -259,7 +259,7 @@ const Template = ({ document }) => {
         </div>
 
         <div className="row">
-          <div className="col-4">
+          <div className="col-4 transTextStyle">
             <img src={signature} alt="signature"/>
             <hr />
             <div> {position} </div>
