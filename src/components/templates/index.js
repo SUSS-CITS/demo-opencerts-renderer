@@ -9,6 +9,8 @@ import CustomTemplate from "./customTemplate";
 import GovTechDemoCert from "./govtechDemoCert";
 import FTCertificate2019 from "./suss/2019-FT-Certificate";
 import FTTranscript2019 from "./suss/2019-FT-Transcript";
+import PTCertificate2019 from "./suss/2019-PT-Certificate";
+import PTTranscript2019 from "./suss/2019-PT-Transcript";
 
 export default {
   default: DefaultTemplate,
@@ -16,5 +18,7 @@ export default {
   GOVTECH_DEMO: GovTechDemoCert,
   FT_CERTIFICATE_2019: FTCertificate2019,
   FT_TRANSCRIPT_2019: FTTranscript2019,
+  PT_CERTIFICATE_2019: PTCertificate2019,
+  PT_TRANSCRIPT_2019: PTTranscript2019,
   NULL: []
 };
