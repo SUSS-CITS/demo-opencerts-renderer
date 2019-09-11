@@ -32,7 +32,7 @@ export const formatSplitTextWithAllCaps = (
       textLength
     );
 
-    if (firstPart.length == 0) {
+    if (firstPart.length === 0) {
       return trimText.toUpperCase();
     } else {
       return (
@@ -79,7 +79,7 @@ export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
       textLength
     );
 
-    if (firstPart.length == 0) {
+    if (firstPart.length === 0) {
       return trimText
         .toLowerCase()
         .split(" ")
@@ -101,7 +101,7 @@ export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
 };
 
 export const addBreaklineIfNotEmpty = text => {
-  if (text != "") {
+  if (text !== "") {
     return <span>{text}</span>;
   }
 };

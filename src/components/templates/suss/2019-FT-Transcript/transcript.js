@@ -75,7 +75,7 @@ const Template = ({ document }) => {
       <div className="container">
         <div className="row">
           <div className="col d-flex justify-content-center">
-            <img src={SUSS_LOGO} className="logoStyle" />
+            <img src={SUSS_LOGO} alt="SUSS Logo" className="logoStyle" />
           </div>
         </div>
 
@@ -175,7 +175,7 @@ const Template = ({ document }) => {
                   {transcriptSection}
 
                   {// Only display creditExempted when the field is in the JSON/Opencert file
-                  creditExempted != 0 && (
+                  creditExempted !== 0 && (
                     <tr>
                       <td colSpan="4">
                         <b>Credit Exemption: </b>
@@ -187,7 +187,7 @@ const Template = ({ document }) => {
                   )}
 
                   {// Only display creditRecog when the field is in the JSON/Opencert file
-                  creditRecog != 0 && (
+                  creditRecog !== 0 && (
                     <tr>
                       <td colSpan="4">
                         <b>
@@ -260,7 +260,7 @@ const Template = ({ document }) => {
 
         <div className="row">
           <div className="col-4">
-            <img src={signature} />
+            <img src={signature} alt="signature"/>
             <hr />
             <div> {position} </div>
           </div>
