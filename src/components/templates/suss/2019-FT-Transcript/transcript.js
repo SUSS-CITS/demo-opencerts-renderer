@@ -174,8 +174,8 @@ const Template = ({ document }) => {
 
                   {transcriptSection}
 
-                  {// Only display creditExempted when the field is in the JSON/Opencert file
-                  creditExempted !== 0 && (
+                  {// Only display creditExempted when the field is not 0.0 in the JSON/Opencert file
+                  creditExempted !== 0.0 && (
                     <tr>
                       <td colSpan="4">
                         <b>Credit Exemption: </b>
@@ -186,8 +186,8 @@ const Template = ({ document }) => {
                     </tr>
                   )}
 
-                  {// Only display creditRecog when the field is in the JSON/Opencert file
-                  creditRecog !== 0 && (
+                  {// Only display creditRecog when the field is not 0.0 in the JSON/Opencert file
+                  creditRecog !== 0.0 && (
                     <tr>
                       <td colSpan="4">
                         <b>
@@ -239,7 +239,10 @@ const Template = ({ document }) => {
             <b>Title</b>
           </div>
           <div className="col-4">
-            <b>Classification</b>
+		  {// Only display degreeClass when the field is not empty in the JSON/Opencert file
+                  degreeClass !== "" && (
+                    <b>Classification</b>
+                  )}
           </div>
           <div className="col-3">
             <b>Date of Conferment</b>

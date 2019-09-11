@@ -165,10 +165,10 @@ export const displayTransRetroLiners = text => {
   if (year < 2017) {
     return (
        <div className="row">
-        <div className="col">
-			<span
-			  className="transTextStyle"
+        <div className="col" 
 			  style={{ marginTop: "50px", marginBottom: "20px" }}>
+			<span
+			  className="transTextStyle">
 			  The transcript was originally issued by SIM University. On 17 March
 			  2017, SIM University was renamed &quot;Singapore University of Social
 			  Sciences&quot;.
