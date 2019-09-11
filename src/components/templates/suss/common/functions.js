@@ -11,7 +11,7 @@ export const formatDate = dateString => {
 };
 
 // 1. To break string if exceeded approx. delimiterLength chars. Avoid splitting word
-// 2. Must be in caps
+// 2. The word(s) must be in uppercase.
 export const formatSplitTextWithAllCaps = (
   splitText,
   delimiterLength,
@@ -47,6 +47,7 @@ export const formatSplitTextWithAllCaps = (
   return trimText.toUpperCase();
 };
 
+// Initial letter of word will be in uppercase.
 export const capitalizeInitialLetter = text => {
   return text
     .toLowerCase()
@@ -55,6 +56,8 @@ export const capitalizeInitialLetter = text => {
     .join(" ");
 };
 
+// 1. To break string if exceeded approx. delimiterLength chars. Avoid splitting word
+// 2. The inital letter of word must be in uppercase.
 export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
   if (!splitText) return null;
   const trimText = splitText
@@ -103,9 +106,9 @@ export const addBreaklineIfNotEmpty = text => {
   }
 };
 
-export const displayCertLiners = text => {
+// Display the statement if graduation semester is less than 2017. For UniSIM graduates.
+export const displayCertRetroLiners = text => {
   const year = text.substring(0, 4);
-  console.log(year);
   if (year < 2017) {
     return (
       <div className="row d-flex justify-content-center">
@@ -114,8 +117,8 @@ export const displayCertLiners = text => {
           style={{ marginTop: "50px", marginBottom: "50px" }}
         >
           This degree was originally conferred by SIM University. <br />
-          On 17 March 2017, SIM University was renamed &quot; Singapore
-          University of Social Sciences &quot;.
+          On 17 March 2017, SIM University was renamed &quot;Singapore
+          University of Social Sciences&quot;.
         </span>
       </div>
     );
@@ -123,6 +126,8 @@ export const displayCertLiners = text => {
     return <div style={{ marginTop: "150px" }}></div>;
   }
 };
+
+// ----- TRANSCRIPT -----
 
 // Rendering the # section
 export function displayHexSectionMod(data) {
@@ -153,3 +158,24 @@ export function displayStarSectionMod(data) {
     }
   }
 }
+
+// Display the statement if graduation semester is less than 2017. For UniSIM graduates.
+export const displayTransRetroLiners = text => {
+  const year = text.substring(0, 4);
+  if (year < 2017) {
+    return (
+      <div className="row d-flex justify-content-center">
+        <span
+          className="certTextStyle"
+          style={{ marginTop: "50px", marginBottom: "50px" }}
+        >
+          The transcript was originally issued by SIM University. On 17 March
+          2017, SIM University was renamed &quot;Singapore University of Social
+          Sciences&quot;.
+        </span>
+      </div>
+    );
+  } else {
+    return <div style={{ marginTop: "150px" }}></div>;
+  }
+};

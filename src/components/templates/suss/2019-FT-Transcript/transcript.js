@@ -11,6 +11,7 @@ const engLocale = require("date-fns/locale/en");
 const Template = ({ document }) => {
   // Declare what will be needed in the Transcript
   const transcriptData = get(document, "transcript", []);
+  const gradSem = get(document, "additionalData.graduationSemester");
   const recipientName = get(document, "recipient.name");
   const recipientAdd1 = get(document, "recipient.address1").toUpperCase();
   const recipientAdd2 = get(document, "recipient.address2").toUpperCase();
@@ -264,6 +265,8 @@ const Template = ({ document }) => {
             <div> {position} </div>
           </div>
         </div>
+
+        {functions.displayTransRetroLiners(gradSem)}
 
         <div className="row">
           <div className="col text-center">

@@ -37,7 +37,7 @@ const Template = ({ document }) => {
           <img src={SUSS_LOGO} className="logoStyle" />
         </div>
 
-        {functions.displayCertLiners(gradSem)}
+        {functions.displayCertRetroLiners(gradSem)}
 
         <div className="row d-flex justify-content-center">
           <span className="certTextStyle">This is to certify that</span>
