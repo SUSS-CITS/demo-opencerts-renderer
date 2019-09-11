@@ -22,7 +22,7 @@ const Template = ({ document }) => {
       className="col-sm-3 col-md-3 text-center"
       style={{ padding: "0px" }}
     >
-      <img src={t.signature} className="signStyle" />
+      <img src={t.signature} alt="signature" className="signStyle" />
       <br />
       <span className="signTextStyle">{t.position}</span>
     </span>
@@ -34,7 +34,7 @@ const Template = ({ document }) => {
 
       <div className="container certBgStyle">
         <div className="row d-flex justify-content-center">
-          <img src={SUSS_LOGO} className="logoStyle" />
+          <img src={SUSS_LOGO} alt="SUSS Logo" className="logoStyle" />
         </div>
 
         {functions.displayCertRetroLiners(gradSem)}
@@ -101,7 +101,7 @@ const Template = ({ document }) => {
             className="col-sm-6 col-md-6 text-right"
             style={{ padding: "0px" }}
           >
-            <img src={CERT_SEAL} height="179px" width="179px" /> <br />
+            <img src={CERT_SEAL} alt="seal" height="179px" width="179px" /> <br />
             <span className="certNoTextStyle">Certificate Number: &nbsp; </span>
             <span className="certNoTextStyle">{certNum}</span>
           </span>
