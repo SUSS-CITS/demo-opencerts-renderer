@@ -42,7 +42,7 @@ const styles = () => (
     }
 
 	.stuNameProgNameTextStyle {
-		font-family: Arial;
+		font-family: Montserrat;
 		font-weight: bold;
 		font-size: 20pt;
 		color: #003B5C;
@@ -50,7 +50,7 @@ const styles = () => (
     }
 
 	.degreeClassTextStyle {
-        font-family: Arial;
+        font-family: Montserrat;
 		font-weight: bold;
 		font-size: 12pt;
 		color: #003B5C;
@@ -58,7 +58,7 @@ const styles = () => (
     }
 
 	.confDateTextStyle {
-        font-family: Arial;
+        font-family: Montserrat;
 		font-weight: bold;
 		font-size: 10pt;
 		color: #003B5C;
@@ -73,7 +73,7 @@ const styles = () => (
 	}
 
 	.certNoTextStyle{
-		font-family: Arial;
+		font-family: Montserrat;
 		font-weight: bold;
 		font-size: 9pt;
 		color: #003B5C;
@@ -81,7 +81,7 @@ const styles = () => (
 	}
 
 	.printerNoTextStyle{
-		font-family: Arial;
+		font-family: Montserrat;
 		font-weight: bold;
 		font-size: 9pt;
 		color: #003B5C;

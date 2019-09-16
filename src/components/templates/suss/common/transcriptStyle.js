@@ -28,7 +28,7 @@ const styles = () => (
 	
 	.officialTransStyle {
 		margin-top: 15px;
-		font-family: Arial;
+		font-family: Montserrat;
 		font-weight: bold;
 		color: #003B5C;
 		font-size: 17pt;
@@ -39,36 +39,41 @@ const styles = () => (
 		font-size: 11pt;
 	}
 	
+	.transModuleTextStyle{
+		font-family: Arial;
+		font-size: 10.5pt;
+	}
+	
 	hr{
 		margin-bottom: 0px;
 	}
 	
 	.officialTransInfoStyle {
 		margin-top: 15mm;
-		font-family: Arial;
+		font-family: Montserrat;
 		font-weight: bold;
 		color: #003B5C;
 		font-size: 25pt;
 	}
 	
 	.headerStyle{
-		font-family: Arial;
+		font-family: Montserrat;
 		font-weight: bold;
 		color: #003B5C;
-		font-size: 15pt;
+		font-size: 14pt;
 	}
 	
 	.textStyle{
 		font-family: Arial;
 		color: #003B5C;
-		font-size: 12pt;
+		font-size: 11pt;
 	}
 	
 	.tableHeaderStyle{
-		font-family: Arial;
+		font-family: Montserrat;
 		font-weight: bold;
 		color: #003B5C;
-		font-size: 13pt;
+		font-size: 12pt;
 	}
 
 	.tdMarksStyle, .tdStyleHeader {

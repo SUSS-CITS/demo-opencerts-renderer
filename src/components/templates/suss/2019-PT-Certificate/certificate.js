@@ -101,7 +101,8 @@ const Template = ({ document }) => {
             className="col-sm-6 col-md-6 text-right"
             style={{ padding: "0px" }}
           >
-            <img src={CERT_SEAL} alt="seal" height="179px" width="179px" /> <br />
+            <img src={CERT_SEAL} alt="seal" height="179px" width="179px" />{" "}
+            <br />
             <span className="certNoTextStyle">Certificate Number: &nbsp; </span>
             <span className="certNoTextStyle">{certNum}</span>
           </span>

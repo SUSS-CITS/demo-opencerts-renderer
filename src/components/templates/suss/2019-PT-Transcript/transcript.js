@@ -85,7 +85,7 @@ const Template = ({ document }) => {
           </div>
         </div>
 
-        <div className="row">&nbsp;</div>
+        <br />
         <div className="row transTextStyle" style={{ paddingLeft: "15px" }}>
           {recipientName}
         </div>
@@ -101,8 +101,9 @@ const Template = ({ document }) => {
         <div className="row transTextStyle" style={{ paddingLeft: "15px" }}>
           {postalCode}
         </div>
+        <br />
 
-        <div className="row topBuffer">
+        <div className="row">
           <div className="col">
             <table className="w-120 transTextStyle">
               <tbody>
@@ -150,30 +151,62 @@ const Template = ({ document }) => {
         {transcriptData !== [] && (
           <div className="row">
             <div className="col">
-              <table className="transTextStyle">
+              <table className="transModuleTextStyle">
                 <tbody>
                   <tr>
-                    <th align="center" width="38">
+                    <th
+                      valign="top"
+                      align="center"
+                      width="38"
+                      className="transTextStyle"
+                    >
                       Year
                     </th>
-                    <th align="center" width="68">
+                    <th
+                      valign="top"
+                      align="center"
+                      width="68"
+                      className="transTextStyle"
+                    >
                       Semester
                     </th>
-                    <th width="76">Course</th>
-                    <th width="400">Title</th>
-                    <th align="center" width="49">
+                    <th valign="top" width="76" className="transTextStyle">
+                      Course
+                    </th>
+                    <th valign="top" width="400" className="transTextStyle">
+                      Title
+                    </th>
+                    <th
+                      align="center"
+                      valign="top"
+                      width="49"
+                      className="transTextStyle"
+                    >
                       Credit Units
                     </th>
-                    <th align="left" width="49">
+                    <th
+                      align="left"
+                      valign="top"
+                      width="49"
+                      className="transTextStyle"
+                    >
                       Result
                     </th>
-                    <th align="left" width="49">
+                    <th
+                      align="left"
+                      valign="top"
+                      width="49"
+                      className="transTextStyle"
+                    >
                       Grade Point
                     </th>
                   </tr>
 
                   {transcriptSection}
 
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
                   {// Only display creditExempted when the field is not 0.0 in the JSON/Opencert file
                   creditExempted !== "0.0" && (
                     <tr>
@@ -239,10 +272,8 @@ const Template = ({ document }) => {
             <b>Title</b>
           </div>
           <div className="col-4">
-		  {// Only display degreeClass when the field is not empty in the JSON/Opencert file
-                  degreeClass !== "" && (
-                    <b>Classification</b>
-                  )}
+            {// Only display degreeClass when the field is not empty in the JSON/Opencert file
+            degreeClass !== "" && <b>Classification</b>}
           </div>
           <div className="col-3">
             <b>Date of Conferment</b>
@@ -260,10 +291,10 @@ const Template = ({ document }) => {
             <i>{confermentDate}</i>
           </div>
         </div>
-
+        <br />
         <div className="row">
           <div className="col-4 transTextStyle">
-            <img src={signature} alt="signature"/>
+            <img src={signature} alt="signature" />
             <hr />
             <div> {position} </div>
           </div>
