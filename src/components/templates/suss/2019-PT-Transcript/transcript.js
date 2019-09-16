@@ -149,7 +149,7 @@ const Template = ({ document }) => {
         </div>
 
         {transcriptData !== [] && (
-          <div className="row">
+          <div className="row topBuffer">
             <div className="col">
               <table className="transModuleTextStyle">
                 <tbody>
