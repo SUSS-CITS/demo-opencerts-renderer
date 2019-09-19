@@ -48,6 +48,11 @@ const styles = () => (
 		margin-bottom: 0px;
 	}
 	
+	.footnoteStyle{
+		font-family: Arial;
+		font-size: 10pt;
+	}
+	
 	.officialTransInfoStyle {
 		margin-top: 15mm;
 		font-family: Montserrat;

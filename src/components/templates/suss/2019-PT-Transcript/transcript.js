@@ -46,23 +46,25 @@ const Template = ({ document }) => {
   // Rendering an array of transcript data
   const transcriptSection = transcriptData.map((t, i) => (
     <tr key={i}>
-      <td valign="top" align="center">
+      <td valign="top" align="center" className="transModuleTextStyle">
         {t.year}
       </td>
-      <td valign="top" align="center">
+      <td valign="top" align="center" className="transModuleTextStyle">
         {t.semester}
       </td>
-      <td valign="top">{t.courseCode}</td>
-      <td valign="top">
+      <td valign="top" className="transModuleTextStyle">
+        {t.courseCode}
+      </td>
+      <td valign="top" className="transModuleTextStyle">
         {functions.formatSplitTextWithInitialCaps(t.name, 40)}
       </td>
-      <td valign="top" align="center">
+      <td valign="top" align="center" className="transModuleTextStyle">
         {t.creditUnits}
       </td>
-      <td valign="top" align="left">
+      <td valign="top" align="left" className="transModuleTextStyle">
         {t.result}
       </td>
-      <td valign="top" align="left">
+      <td valign="top" align="left" className="transModuleTextStyle">
         {t.gradePoint}
       </td>
     </tr>
@@ -151,53 +153,28 @@ const Template = ({ document }) => {
         {transcriptData !== [] && (
           <div className="row topBuffer">
             <div className="col">
-              <table className="transModuleTextStyle">
+              <table className="transTextStyle">
                 <tbody>
                   <tr>
-                    <th
-                      valign="top"
-                      align="center"
-                      width="38"
-                      className="transTextStyle"
-                    >
+                    <th valign="top" align="center" width="38">
                       Year
                     </th>
-                    <th
-                      valign="top"
-                      align="center"
-                      width="68"
-                      className="transTextStyle"
-                    >
+                    <th valign="top" align="center" width="68">
                       Semester
                     </th>
-                    <th valign="top" width="76" className="transTextStyle">
+                    <th valign="top" width="76">
                       Course
                     </th>
-                    <th valign="top" width="400" className="transTextStyle">
+                    <th valign="top" width="400">
                       Title
                     </th>
-                    <th
-                      align="center"
-                      valign="top"
-                      width="49"
-                      className="transTextStyle"
-                    >
+                    <th align="center" valign="top" width="49">
                       Credit Units
                     </th>
-                    <th
-                      align="left"
-                      valign="top"
-                      width="49"
-                      className="transTextStyle"
-                    >
+                    <th align="left" valign="top" width="49">
                       Result
                     </th>
-                    <th
-                      align="left"
-                      valign="top"
-                      width="49"
-                      className="transTextStyle"
-                    >
+                    <th align="left" valign="top" width="49">
                       Grade Point
                     </th>
                   </tr>
@@ -267,7 +244,7 @@ const Template = ({ document }) => {
           </div>
         )}
 
-        <div className="row">
+        <div className="row transTextStyle topBuffer">
           <div className="col-5">
             <b>Title</b>
           </div>
@@ -280,7 +257,7 @@ const Template = ({ document }) => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row transTextStyle">
           <div className="col-5">
             <i>{functions.capitalizeInitialLetter(degreeTitle)}</i>
           </div>
@@ -292,8 +269,8 @@ const Template = ({ document }) => {
           </div>
         </div>
         <br />
-        <div className="row">
-          <div className="col-4 transTextStyle">
+        <div className="row transTextStyle">
+          <div className="col-4">
             <img src={signature} alt="signature" />
             <hr />
             <div> {position} </div>
