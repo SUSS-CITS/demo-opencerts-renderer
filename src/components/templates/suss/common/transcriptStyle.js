@@ -50,7 +50,7 @@ const styles = () => (
 	
 	.footnoteStyle{
 		font-family: Arial;
-		font-size: 10pt;
+		font-size: 8.8pt;
 	}
 	
 	.officialTransInfoStyle {
