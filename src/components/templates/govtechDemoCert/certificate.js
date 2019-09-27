@@ -79,6 +79,7 @@ const Template = ({ document }) => (
           <img
             style={{ width: "100%", height: "auto" }}
             src={get(document, "additionalData.certSignatories[0].signature")}
+			slt="signature"
           />
           <hr
             style={{
