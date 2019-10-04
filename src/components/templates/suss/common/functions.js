@@ -31,19 +31,19 @@ export const formatSplitTextWithAllCaps = (
     const secondPart = trimText.substring(
       trimText.indexOf(" ", delimiterLength),
       textLength
-    ).trim();
-	
-    if (secondPart.length > delimiterLength) {
-      const secondPartSplit = secondPart.substring(
-        0,
-        secondPart.indexOf(" ", delimiterLength)
-      );
-	
-      const thirdPart = secondPart.substring(
-        secondPart.indexOf(" ", delimiterLength),
-        textLength
-      );
-	  
+    );
+
+    if (firstPart.length === 0) {
+      return capitalizeInitialLetter(trimText);
+    } else if (secondPart.trim().length > delimiterLength) {
+      const secondPartSplit = secondPart
+        .trim()
+        .substring(0, secondPart.trim().indexOf(" ", delimiterLength));
+
+      const thirdPart = secondPart
+        .trim()
+        .substring(secondPart.trim().indexOf(" ", delimiterLength), textLength);
+
       return (
         <span>
           {firstPart.toUpperCase()} <br /> {additionalChar}{" "}
@@ -89,21 +89,18 @@ export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
     const secondPart = trimText.substring(
       trimText.indexOf(" ", delimiterLength),
       textLength
-    ).trim();
+    );
 
-	if (firstPart.length === 0) {
-		  return capitalizeInitialLetter(trimText);
-	}
-    else if (secondPart.length > delimiterLength) {
-      const secondPartSplit = secondPart.substring(
-        0,
-        secondPart.indexOf(" ", delimiterLength)
-      );
-	  
-     const thirdPart = secondPart.substring(
-        secondPart.indexOf(" ", delimiterLength),
-        textLength
-      );
+    if (firstPart.length === 0) {
+      return capitalizeInitialLetter(trimText);
+    } else if (secondPart.trim().length > delimiterLength) {
+      const secondPartSplit = secondPart
+        .trim()
+        .substring(0, secondPart.indexOf(" ", delimiterLength));
+
+      const thirdPart = secondPart
+        .trim()
+        .substring(secondPart.indexOf(" ", delimiterLength), textLength);
 
       return (
         <span>
