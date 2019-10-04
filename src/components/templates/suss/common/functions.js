@@ -89,24 +89,25 @@ export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
     const secondPart = trimText.substring(
       trimText.indexOf(" ", delimiterLength),
       textLength
-    );
+    ).trim();
 
 	if (firstPart.length === 0) {
 		  return capitalizeInitialLetter(trimText);
 	}
-    else if (secondPart.length >= delimiterLength) {
-      const secondPart = trimText.substring(
-        trimText.indexOf(" ", delimiterLength),
-        trimText.indexOf(" ", delimiterLength * 2)
+    else if (secondPart.length > delimiterLength) {
+      const secondPartSplit = secondPart.substring(
+        0,
+        secondPart.indexOf(" ", delimiterLength)
       );
-      const thirdPart = trimText.substring(
-        trimText.indexOf(" ", delimiterLength * 2),
+	  
+     const thirdPart = secondPart.substring(
+        secondPart.indexOf(" ", delimiterLength),
         textLength
       );
 
       return (
         <span>
-          {firstPart} <br /> {secondPart} <br /> {thirdPart}
+          {firstPart} <br /> {secondPartSplit} <br /> {thirdPart}
         </span>
       );
     } else {
