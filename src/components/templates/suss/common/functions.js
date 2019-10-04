@@ -20,20 +20,35 @@ export const formatSplitTextWithAllCaps = (
   if (!splitText) return null;
   const trimText = splitText.trim();
   const textLength = trimText.length;
-  if (textLength > delimiterLength) {
+
+  if (textLength >= delimiterLength) {
     // explanation of indexOf:
     // - string.indexOf(searchvalue, start)
     const firstPart = trimText.substr(
       0,
-      trimText.indexOf(" ", delimiterLength - 1)
+      trimText.indexOf(" ", delimiterLength)
     );
     const secondPart = trimText.substring(
-      trimText.indexOf(" ", delimiterLength - 1),
+      trimText.indexOf(" ", delimiterLength),
       textLength
     );
 
-    if (firstPart.length === 0) {
-      return trimText.toUpperCase();
+    if (secondPart.length >= delimiterLength) {
+      const secondPart = trimText.substring(
+        trimText.indexOf(" ", delimiterLength),
+        trimText.indexOf(" ", delimiterLength * 2)
+      );
+      const thirdPart = trimText.substring(
+        trimText.indexOf(" ", delimiterLength * 2),
+        textLength
+      );
+
+      return (
+        <span>
+          {firstPart.toUpperCase()} <br /> {additionalChar}{" "}
+          {secondPart.toUpperCase()} <br /> {thirdPart.toUpperCase()}
+        </span>
+      );
     } else {
       return (
         <span>
@@ -60,31 +75,36 @@ export const capitalizeInitialLetter = text => {
 // 2. The inital letter of word must be in uppercase.
 export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
   if (!splitText) return null;
-  const trimText = splitText
-    .trim()
-    .toLowerCase()
-    .split(" ")
-    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-    .join(" ");
+  const trimText = capitalizeInitialLetter(splitText.trim());
   const textLength = trimText.length;
-  if (textLength > delimiterLength) {
+
+  if (textLength >= delimiterLength) {
     // explanation of indexOf:
     // - string.indexOf(searchvalue, start)
     const firstPart = trimText.substr(
       0,
-      trimText.indexOf(" ", delimiterLength - 1)
+      trimText.indexOf(" ", delimiterLength)
     );
     const secondPart = trimText.substring(
-      trimText.indexOf(" ", delimiterLength - 1),
+      trimText.indexOf(" ", delimiterLength),
       textLength
     );
 
-    if (firstPart.length === 0) {
-      return trimText
-        .toLowerCase()
-        .split(" ")
-        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-        .join(" ");
+    if (secondPart.length >= delimiterLength) {
+      const secondPart = trimText.substring(
+        trimText.indexOf(" ", delimiterLength),
+        trimText.indexOf(" ", delimiterLength * 2)
+      );
+      const thirdPart = trimText.substring(
+        trimText.indexOf(" ", delimiterLength * 2),
+        textLength
+      );
+
+      return (
+        <span>
+          {firstPart} <br /> {secondPart} <br /> {thirdPart}
+        </span>
+      );
     } else {
       return (
         <span>
@@ -93,11 +113,7 @@ export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
       );
     }
   }
-  return trimText
-    .toLowerCase()
-    .split(" ")
-    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-    .join(" ");
+  return capitalizeInitialLetter(trimText);
 };
 
 export const addBreaklineIfNotEmpty = text => {
