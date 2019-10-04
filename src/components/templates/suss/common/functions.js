@@ -31,22 +31,23 @@ export const formatSplitTextWithAllCaps = (
     const secondPart = trimText.substring(
       trimText.indexOf(" ", delimiterLength),
       textLength
-    );
-
-    if (secondPart.length >= delimiterLength) {
-      const secondPart = trimText.substring(
-        trimText.indexOf(" ", delimiterLength),
-        trimText.indexOf(" ", delimiterLength * 2)
+    ).trim();
+	
+    if (secondPart.length > delimiterLength) {
+      const secondPartSplit = secondPart.substring(
+        0,
+        secondPart.indexOf(" ", delimiterLength)
       );
-      const thirdPart = trimText.substring(
-        trimText.indexOf(" ", delimiterLength * 2),
+	
+      const thirdPart = secondPart.substring(
+        secondPart.indexOf(" ", delimiterLength),
         textLength
       );
-
+	  
       return (
         <span>
           {firstPart.toUpperCase()} <br /> {additionalChar}{" "}
-          {secondPart.toUpperCase()} <br /> {thirdPart.toUpperCase()}
+          {secondPartSplit.toUpperCase()} <br /> {thirdPart.toUpperCase()}
         </span>
       );
     } else {
