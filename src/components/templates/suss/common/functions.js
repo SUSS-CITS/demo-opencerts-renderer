@@ -96,11 +96,11 @@ export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
     } else if (secondPart.trim().length > delimiterLength) {
       const secondPartSplit = secondPart
         .trim()
-        .substring(0, secondPart.indexOf(" ", delimiterLength));
+        .substring(0, secondPart.trim().indexOf(" ", delimiterLength));
 
       const thirdPart = secondPart
         .trim()
-        .substring(secondPart.indexOf(" ", delimiterLength), textLength);
+        .substring(secondPart.trim().indexOf(" ", delimiterLength), textLength);
 
       return (
         <span>
