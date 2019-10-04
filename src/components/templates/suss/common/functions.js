@@ -90,7 +90,10 @@ export const formatSplitTextWithInitialCaps = (splitText, delimiterLength) => {
       textLength
     );
 
-    if (secondPart.length >= delimiterLength) {
+	if (firstPart.length === 0) {
+		  return capitalizeInitialLetter(trimText);
+	}
+    else if (secondPart.length >= delimiterLength) {
       const secondPart = trimText.substring(
         trimText.indexOf(" ", delimiterLength),
         trimText.indexOf(" ", delimiterLength * 2)
