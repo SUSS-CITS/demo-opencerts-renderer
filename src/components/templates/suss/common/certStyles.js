@@ -89,8 +89,7 @@ const styles = () => (
 	}
 	
 	.signStyle {
-		width: 2.8cm;
-		height: 2.8cm;
+		width: 150px;
 		align: left;
 	}
 
