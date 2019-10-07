@@ -271,7 +271,7 @@ const Template = ({ document }) => {
         <br />
         <div className="row transTextStyle">
           <div className="col-4">
-            <img src={signature} alt="signature" />
+            <img src={signature} alt="signature" width="150px" />
             <hr />
             <div> {position} </div>
           </div>
