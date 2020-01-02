@@ -1,0 +1,21 @@
+import { Meta, Preview, Props, Description, Story } from "@storybook/addon-docs/blocks";
+import { transInfo as PTTransInfo2019 } from "./trans-info";
+import { sussSampleTranscript } from "../../samples";
+
+<Meta title="MDX|PTTransInfo2019" component={PTTransInfo2019} />
+
+# SUSSCertificateTemplate component
+
+<Description of={PTTransInfo2019} />
+
+# Props
+
+<Props of={PTTransInfo2019} />
+
+# Usage
+
+<Preview withSource>
+  <Story name="basic sample">
+    <PTTransInfo2019 document={sussSampleTranscript} />
+  </Story>
+</Preview>
